@@ -1,0 +1,14 @@
+{
+  "name": "misctool-sh",
+  "version": "1.0.0",
+  "main": "MISCtool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "azurity",
+  "license": "GPL-3.0",
+  "description": "This project is a tool for MISC in CTF",
+  "dependencies": {
+    "colors": "^1.2.5"
+  }
+}
