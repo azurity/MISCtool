@@ -56,7 +56,7 @@ action(argv: string[], start: number, obj: any): void
 可供使用的全局函数(由fileAnalysis提供):
 
 ```ts
-registerFilter(name: string, file: string): void
+global.registerFilter(name: string, file: string): void
 ```
 用于注册filter
 - `name`:filter的名称，将在命令调用时使用
