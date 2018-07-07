@@ -1,0 +1,14 @@
+[
+    {
+        "format": "zlib-raw",
+        "path": "parser/zlib/raw"
+    },
+    {
+        "format": "zlib",
+        "path": "parser/zlib/zlib"
+    },
+    {
+        "format": "gzip",
+        "path": "parser/zlib/gzip"
+    }
+]

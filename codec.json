@@ -1,0 +1,18 @@
+[
+    {
+        "codec": "utf-8",
+        "path": "codec/utf-8"
+    },
+    {
+        "codec": "hex",
+        "path": "codec/hex"
+    },
+    {
+        "codec": "base64",
+        "path": "codec/base64"
+    },
+    {
+        "codec": "base64-toggle-case",
+        "path": "codec/base64/toggle"
+    }
+]

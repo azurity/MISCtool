@@ -9,6 +9,7 @@
   "license": "GPL-3.0",
   "description": "This project is a tool for MISC in CTF",
   "dependencies": {
-    "colors": "^1.2.5"
+    "colors": "^1.2.5",
+    "commander": "^2.16.0"
   }
 }
