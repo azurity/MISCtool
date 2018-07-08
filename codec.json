@@ -8,11 +8,74 @@
         "path": "codec/hex"
     },
     {
+        "codec": "base16",
+        "path": "codec/hex"
+    },
+    {
         "codec": "base64",
         "path": "codec/base64"
     },
     {
         "codec": "base64-toggle-case",
         "path": "codec/base64/toggle"
+    },
+    {
+        "codec": "base32",
+        "path": "codec/base32"
+    },
+    {
+        "codec": "base85",
+        "comment": "(type:ascii|btoa|adobe|Z85)",
+        "path": "codec/base85"
+    },
+    {
+        "codec": "url",
+        "path": "codec/url"
+    },
+    {
+        "codec": "url-component",
+        "path": "codec/url/component"
+    },
+    {
+        "codec": "utf-16",
+        "path": "codec/utf-16/le"
+    },
+    {
+        "codec": "utf-16-le",
+        "path": "codec/utf-16/le"
+    },
+    {
+        "codec": "utf-16-be",
+        "path": "codec/utf-16/be"
+    },
+    {
+        "codec": "JSFuck",
+        "path": "codec/jsfuck"
+    },
+    {
+        "codec": "brainfuck",
+        "path": "codec/brainfuck"
+    },
+    {
+        "codec": "Ook",
+        "path": "codec/brainfuck/Ook"
+    },
+    {
+        "codec": "morse",
+        "path": "codec/morse"
+    },
+    {
+        "codec": "caesar",
+        "comment": "(count)",
+        "path": "codec/caesar"
+    },
+    {
+        "codec": "caesar-ascii",
+        "comment": "(count)",
+        "path": "codec/caesar/ascii"
+    },
+    {
+        "codec": "rot13",
+        "path": "codec/caesar/rot13"
     }
 ]

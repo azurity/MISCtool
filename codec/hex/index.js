@@ -3,9 +3,9 @@ function encode(data) {
 }
 
 function decode(data) {
-    var str = data.toString('utf8')
+    let str = data.toString('utf8')
     if (str.match(/[^0-9A-Fa-f]/)) {
-        throw ('illegal hex data'.bgRed)
+        throw ('illegal hex/base16 data'.bgRed)
     }
     return Buffer.from(str, 'hex')
 }

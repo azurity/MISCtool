@@ -35,10 +35,28 @@ GPLv3,详见[LICENSE](LICENSE)
         - `raw/index.js`:无格式deflate格式分析脚本
         - `zlib/index.js`:zlib格式分析脚本
 - `codec`:编解码器脚本插件目录
+    - `base32/index.js`:base32编解码器
     - `base64/index.js`:base64编解码器
     - `base64/toggle/index.js`:大小写转换的base64编解码器
+    - `base85/index.js`:base85编解码器，支持ascii85,Adobe85,Z85格式
+    - `brainfuck`:brainfuck和Ook解码器(暂时不支持编码)
+        - `brainfuck.js & Ook.js`:开源解码器，来源未知
+        - `index.js`:brainfuck解码器封装
+        - `ook/index.js`:Ook解码器封装
+    - `caesar/index.js`:字母凯撒加密编解码器
+    - `caesar/ascii/index.js`:ASCII凯撒加密编解码器
+    - `caesar/rot13/index.js`:rot13编解码器
     - `hex/index.js`:16进制编解码器
+    - `jsfuck`:jsfuck相关编解码器
+        - `index.js`:jsfuck编解码器封装
+        - `jsfuck.js`:开源JSFuck编码器库[jsfuck](https://github.com/aemkei/jsfuck)
+    - `morse/index.js`:摩斯密码编解码器
+    - `url/index.js`:url编解码器
+    - `url/component/index.js`:url组件编解码器
     - `utf-8`:utf-8编解码器(空白编解码器)
+    - `utf-16`:utf-16相关编解码器
+        - `le/index.js`:utf-16 little-endian编解码器
+        - `be/index.js`:utf-16 big-endian编解码器
 
 ## 插件开发
 

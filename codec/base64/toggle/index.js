@@ -1,5 +1,5 @@
 function encode(data) {
-    var buf = Buffer.from(data.toString('base64'))
+    let buf = Buffer.from(data.toString('base64'))
     for (let i = 0; i < buf.length; i++) {
         if (String.fromCharCode(buf[i]).match(/[A-Za-z]/)) {
             buf[i] ^= 0x20
@@ -14,7 +14,7 @@ function decode(data) {
             buf[i] ^= 0x20
         }
     }
-    var str = data.toString('utf8')
+    let str = data.toString('utf8')
     if (str.match(/[^A-Za-z0-9+/=]/)) {
         throw ('illegal base64 data'.bgRed)
     }

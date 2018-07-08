@@ -3,7 +3,7 @@ function encode(data) {
 }
 
 function decode(data) {
-    var str = data.toString('utf8')
+    let str = data.toString('utf8')
     if (str.match(/[^A-Za-z0-9+/=]/)) {
         throw ('illegal base64 data'.bgRed)
     }

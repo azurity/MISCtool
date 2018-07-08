@@ -58,7 +58,7 @@ try {
 console.log('parsing the file: %s', program.input)
 
 if (program.format.length == 0) {
-    var tryparse = []
+    let tryparse = []
     for (let it of allFormats) {
         tryparse.push(require(path.resolve(it.path, 'index.js')).tryParse(path.resolve(program.input), program.output, program.args, false))
     }
@@ -75,7 +75,7 @@ if (program.format.length == 0) {
         }
     })
 } else {
-    var tryparse = []
+    let tryparse = []
     for (let it of allFormats) {
         if (program.format.includes(it.format)) {
             tryparse.push(require(path.resolve(it.path, 'index.js')).tryParse(path.resolve(program.input), program.output, program.args, true))

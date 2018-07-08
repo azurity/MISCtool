@@ -8,13 +8,23 @@ program.input = ''
 program.output = ''
 program.codec = []
 
+function keyval(val) {
+    var ret = {}
+    let l = val.split(',')
+    for (let it of l) {
+        let pair = it.split(':')
+        ret[pair[0]] = pair[1]
+    }
+    return ret
+}
+
 function list(val) {
     return val.split(',')
 }
 
 program.version('1.0.0')
     .usage('[options] <plugin-args>')
-    .option('-c, --codec <codecs>', 'set the order of use codec, use -e/-d suffix to distinguish encoding and decoding', list)
+    .option('-c, --codec <codecs>', 'set the order of use codec, use -e/-d suffix to distinguish encoding and decoding, if use arguments please use as `(key:value,...)`', list)
     .option('-i, --input <path>', 'give a path for processing')
     .option('-l, --list-codecs', 'list all codecs supported')
     .option('-o, --output <path>', 'give an output path')
@@ -49,10 +59,25 @@ var data = Buffer.from(program.inputData, 'utf8')
 
 try {
     for (let it of program.codec) {
+        let argStr = it.match(/\(.*\)/)
+        if (argStr != null) {
+            argStr = argStr.toString()
+        } else {
+            argStr = ''
+        }
+        let name = it.substr(0, it.length - argStr.length - 2)
+        if (typeof codecObj[name] == 'undefined') {
+            console.log('no such codec: %s'.bgRed, name)
+            process.exit()
+        }
+        if(argStr[0]=='('){
+            argStr=argStr.substr(1, argStr.length - 2)
+        }
+        let argv = keyval(argStr)
         if (it.substr(-2) == '-e') {
-            data = codecObj[it.substr(0, it.length - 2)].encode(data)
+            data = codecObj[name].encode(data, argv)
         } else if (it.substr(-2) == '-d') {
-            data = codecObj[it.substr(0, it.length - 2)].decode(data)
+            data = codecObj[name].decode(data, argv)
         }
     }
 } catch (e) {
@@ -70,5 +95,9 @@ if (program.output != '') {
     }
 }
 
-console.log('utf-8:\n' + data.toString('utf8'))
+try {
+    console.log('utf-8:\n' + data.toString('utf8'))
+} catch (e) {
+    console.log('can\' show as utf-8.')
+}
 console.log('hex:\n' + data.toString('hex'))
